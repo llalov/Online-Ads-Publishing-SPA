@@ -7,6 +7,7 @@ app.controller('LoginController',
             authService.login(userData,
                 function success() {
                     notifyService.showInfo("Login successful");
+                    $location.path('/');
                 },
                 function error(err) {
                     notifyService.showError('Login unsuccessful', err);
