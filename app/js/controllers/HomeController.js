@@ -5,7 +5,7 @@
      function ($scope, adsService, notifyService, pageSize) {
          $scope.adsParams = {
             'startPage': 1,
-             'pageSize': pageSize
+            'pageSize': pageSize
          };
          $scope.reloadAds = function() {
              adsService.getAds(
@@ -18,6 +18,17 @@
                  }
              );
          };
+         $scope.$on("categorySelectionChanged", function(event, selectedCategoryId) {
+             $scope.adsParams.categoryId = selectedCategoryId;
+             $scope.startPage = 1;
+             $scope.reloadAds();
+         });
+
+         $scope.$on("townSelectionChanged", function(event, selectedTownId) {
+             $scope.adsParams.townId = selectedTownId;
+             $scope.startPage = 1;
+             $scope.reloadAds();
+         });
 
          $scope.reloadAds();
      });

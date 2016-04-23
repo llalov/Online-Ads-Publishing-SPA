@@ -7,7 +7,7 @@ var app = angular.module('app', [
 ]);
 
 app.constant('baseServiceUrl', 'http://softuni-ads.azurewebsites.net');
-app.constant('pageSize', 2);
+app.constant('pageSize', 5);
 
 app.config(function ($routeProvider) {
     $routeProvider.when('/', {
@@ -18,7 +18,10 @@ app.config(function ($routeProvider) {
         templateUrl: 'templates/login.html',
         controller: 'LoginController'
     });
-    // TODO: define a route for the register controller
+    $routeProvider.when('/register', {
+        templateUrl: 'templates/register.html',
+        controller: 'RegisterController'
+    });
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );
