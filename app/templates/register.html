@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="box">
+    <h2>Register</h2>
+    <p>
+        <label for="username">Username:</label><br/>
+        <input type="text" id="username" ng-model="userData.username" required />
+    </p>
+    <p>
+        <label for="password">Password:</label><br/>
+        <input type="password" id="password" ng-model="userData.password" required />
+    </p>
+    <p>
+        <label for="confirmPassword">ConfirmPassword:</label><br/>
+        <input type="password" id="confirmPassword" ng-model="userData.confirmPassword" required />
+    </p>
+    <p>
+        <label for="name">Name:</label><br/>
+        <input type="text" id="name" ng-model="userData.name" required />
+    </p>
+    <p>
+        <label for="email">Email:</label><br/>
+        <input type="email" id="email" ng-model="userData.email" required />
+    </p>
+    <p>
+        <label for="phone">Phone:</label><br/>
+        <input type="number" id="phone" ng-model="userData.phone" />
+    </p>
+    <p>
+        <label for="town">Town:</label>
+        <select id="town" ng-model="userData.townId">
+            <option value="null">(None)</option>
+            <option ng-repeat="town in towns"
+                    value="{{town.id}}">{{town.name}}</option>
+        </select>
+    </p>
+    <p>
+        <a ng-click="register(userData)" class="button">Register</a>
+        <a href="#/login" class="link">Login</a>
+    <p>
+</div>

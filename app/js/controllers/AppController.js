@@ -9,6 +9,5 @@
              authService.logout();
              notifyService.showInfo('Logout successful');
              $location.path('/');
-         }
-
+         };
  });
