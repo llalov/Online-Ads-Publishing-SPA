@@ -8,7 +8,8 @@ app.factory('userService',
                     method: 'POST',
                     url: baseServiceUrl + '/api/user/ads',
                     headers: authService.getAuthHeaders(),
-                    data: adData};
+                    data: adData
+                };
                 $http(request).success(success).error(error);
             },
             getUserAds: function (params, success, error) {

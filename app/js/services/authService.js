@@ -31,7 +31,7 @@
              getCurrentUser : function() {
                  var userObject = sessionStorage['currentUser'];
                  if(userObject) {
-                    return JSON.parse(userObject);
+                    return JSON.parse(sessionStorage['currentUser']);
                  }
              },
              isAnonymous : function() {

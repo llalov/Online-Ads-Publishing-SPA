@@ -4,7 +4,18 @@
         <label for="title">Title:</label><br/>
         <input type="text" id="title" ng-model="adData.title" required />
     </p>
-    <!-- TODO: add “text” field -->
+    <p>
+        <label for="text">Text:</label><br/>
+        <textarea type="" id="text" ng-model="adData.text" required ></textarea>
+    </p>
+    <p>
+        <label for="image">Image:</label>
+        <input type="file" id="image"
+               onchange="angular.element(this).scope().fileSelected(this)" />
+    <div class="image-box">
+        <p>Image Preview</p>
+    </div>
+    </p>
     <p>
         <label for="category">Category:</label><br/>
         <select id="category" ng-model="adData.categoryId">
@@ -12,7 +23,13 @@
             <option ng-repeat="c in categories" value="{{c.id}}">{{c.name}}</option>
         </select>
     </p>
-    <!-- TODO: add “town” drop-down field -->
+    <p>
+        <label for="town">Town:</label><br/>
+        <select id="town" ng-model="adData.townId">
+            <option value="null">(None)</option>
+            <option ng-repeat="town in towns" value="{{town.id}}">{{town.name}}</option>
+        </select>
+    </p>
     <p>
         <a ng-click="publishAd(adData)" class="button">Publish</a>
         <a href="#/user/ads" class="button">Cancel</a>
